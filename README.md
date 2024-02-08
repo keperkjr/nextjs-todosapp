@@ -1,5 +1,12 @@
 Project based on https://www.udemy.com/course/master-next-js-for-busy-developers/
 
+Extensions:
+- ES7+ React/Redux/React-Native snippets
+- ESLint
+- Prettier - Code formatter
+- Tailwind CSS IntelliSense
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
