@@ -11,7 +11,7 @@ export async function GET() {
 }
 
 export async function DELETE(request) {
-    const data = request.json();
+    const data = await request.json();
 
     todos = todos.filter((todo) => todo.id !== data.id);
 
@@ -19,7 +19,7 @@ export async function DELETE(request) {
 }
 
 export async function POST(request) {
-    const data = request.json();
+    const data = await request.json();
 
     const newTodo = {
         id: (todos.length == 0 ? 0 : todos.max((todo) => todo.id)) + 1,

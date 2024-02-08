@@ -1,3 +1,4 @@
+import DeleteTodo from '@/components/DeleteTodo';
 import React from 'react'
 
 async function TodosPage() {
@@ -7,7 +8,7 @@ async function TodosPage() {
     });
     const data = await response.json();
 
-    console.log(data);
+    //console.log(data);
 
     return (
         <section className='mt-24 w-full h-full flex justify-center'>
@@ -35,7 +36,7 @@ async function TodosPage() {
                                 {todo.name}
                             </td>
                             <td className='py-3 px-6'>
-                                <button>Delete</button>
+                                <DeleteTodo id={todo.id} />
                             </td>                                                        
                         </tr>    
                     ))} 
