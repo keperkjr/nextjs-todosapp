@@ -21,6 +21,7 @@ function DeleteTodo({id}) {
             throw new Error("Something went wrong");
         }
         router.refresh();
+        // router.push("/"); // Navigate to home page
     }
     return (
         <button onClick={handleDelete}>Delete</button>
