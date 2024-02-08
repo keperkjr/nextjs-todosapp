@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import React from 'react'
 
 export async function generateStaticParams() {
@@ -9,9 +10,13 @@ export async function generateStaticParams() {
 }
 
 function page({params}) {
-  return (
-    <div>Params ID: {params.id}</div>
-  )
+    if (parseInt(params.id) === 1) {
+        notFound();
+    }
+
+    return (
+        <div>Params ID: {params.id}</div>
+    )
 }
 
 export default page

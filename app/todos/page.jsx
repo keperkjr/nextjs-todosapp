@@ -1,8 +1,10 @@
 import DeleteTodo from '@/components/DeleteTodo';
 import Link from 'next/link';
-import React from 'react'
+import React, { Suspense } from 'react'
 
 async function TodosPage() {
+    //const dummyWait = await new Promise((resolve) => setTimeout(resolve, 5000))
+
     const response = await fetch("http://localhost:3000/api/todos", {
         cache: "no-store", // dont cache the result
         //next: { revalidate: 15 } // refresh cache period (seconds)
@@ -39,8 +41,10 @@ async function TodosPage() {
                                 {todo.name}
                             </td>
                             <td className='py-3 px-6'>
-                                <DeleteTodo id={todo.id} />
-                            </td>                                                        
+                                <Suspense fallback={<p>Loading button..</p>}>
+                                    <DeleteTodo id={todo.id} />
+                                </Suspense>
+                            </td>
                         </tr>    
                     ))} 
                 </tbody>
